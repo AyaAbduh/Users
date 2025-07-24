@@ -2,8 +2,8 @@ package com.example.users.di
 
 import android.app.Application
 import androidx.room.Room
-import com.example.users.data.AppDatabase
-import com.example.users.data.UserDao
+import com.example.users.data.local.AppDatabase
+import com.example.users.data.local.UserDao
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

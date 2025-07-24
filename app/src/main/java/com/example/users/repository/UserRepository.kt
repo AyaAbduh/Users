@@ -1,7 +1,7 @@
 package com.example.users.data.repository
 
-import com.example.users.data.User
-import com.example.users.data.UserDao
+import com.example.users.data.local.User
+import com.example.users.data.local.UserDao
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 import javax.inject.Singleton
