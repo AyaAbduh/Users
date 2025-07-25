@@ -12,9 +12,8 @@ fun AppNavHost(navController: NavHostController) {
     NavHost(navController = navController, startDestination = Routes.INPUT) {
         composable(Routes.INPUT) {
             InputScreen(
-                onUserAdded = {
-                    navController.navigate(Routes.DISPLAY)
-                }
+                onUserAdded = { navController.navigate(Routes.DISPLAY) },
+                onViewUsersClick  = { navController.navigate(Routes.DISPLAY) }
             )
         }
 

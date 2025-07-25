@@ -17,6 +17,7 @@ import com.example.users.viewmodel.UserViewModel
 @Composable
 fun InputScreen(
     onUserAdded: () -> Unit,
+    onViewUsersClick: () -> Unit,
     viewModel: UserViewModel = hiltViewModel()
 ) {
     val userAdded by viewModel.userAdded.collectAsState()
@@ -51,7 +52,8 @@ fun InputScreen(
                     )
                 )
             }
-        }
+        },
+        onViewUsersClick = onViewUsersClick
     )
 }
 
@@ -65,7 +67,8 @@ fun InputScreenContent(
     onJobTitleChange: (String) -> Unit,
     gender: String,
     onGenderChange: (String) -> Unit,
-    onSaveClick: () -> Unit
+    onSaveClick: () -> Unit,
+    onViewUsersClick: () -> Unit
 ) {
     Column(
         modifier = Modifier
@@ -112,6 +115,15 @@ fun InputScreenContent(
             modifier = Modifier.fillMaxWidth()
         ) {
             Text("Save User")
+        }
+
+        Spacer(modifier = Modifier.height(8.dp))
+
+        OutlinedButton(
+            onClick = onViewUsersClick,
+            modifier = Modifier.fillMaxWidth()
+        ) {
+            Text("View All Users")
         }
     }
 }
@@ -170,7 +182,8 @@ fun InputScreenPreview() {
             onJobTitleChange = {},
             gender = "Female",
             onGenderChange = {},
-            onSaveClick = {}
+            onSaveClick = {},
+            onViewUsersClick = {}
         )
     }
 }
